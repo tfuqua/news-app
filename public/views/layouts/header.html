@@ -1,0 +1,34 @@
+<div ng-app="newsApp">
+
+<!-- Top Nav -->
+<div class="top-nav">
+  <div class="pull-left">
+    <span class="fa fa-bars"></span><span>Sections</span>
+    <span class="fa fa-search"></span><span>Search</span>
+  </div>
+  <div class="pull-right">
+    <span><a>taylor@test.com</a></span><span class="fa fa-gears"></span>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<!-- Header -->
+<header class="text-center" ng-controller="headerController">
+    <a href="#/">
+      <h1 class="title">CAPTECH.IO NEWS</H1>
+    </a>
+    <div id="date" class="date">
+        <span>{{date | date:'fullDate'}}</span>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav class="text-center" ng-controller="menuController">
+    <ul class="list-inline">
+      <li ng-repeat="menu in menus">
+        <a href="#categories/{{menu.id}}">{{menu.displayName}}</a>
+      </li>
+    </ul>
+</nav>
+
+</div>

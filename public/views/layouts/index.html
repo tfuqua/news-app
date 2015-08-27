@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CapTech News</title>
+
+	<link rel="stylesheet" href="/src/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/src/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/dist/css/style.min.css">
+
+	<script src="/src/js/jquery.min.js"></script>
+  <script src="/src/js/angular.min.js"></script>
+	<script src="/src/js/angular-route.js"></script>
+  <script src="/src/js/angular-sanitize.js"></script>
+	<script src="/src/js/controllers/MainCtrl.js"></script>
+
+</head>
+<body ng-app="newsApp">
+<div class="main-container">
+		<div ng-include="'../views/layouts/header.html'"></div>
+
+		<div ng-view></div> <!-- ng-view -->
+
+		<div class="clearfix"></div>
+</div>
+</body>
+</html>

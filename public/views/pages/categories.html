@@ -1,0 +1,29 @@
+
+<div class="category">
+<div class="col-sm-8">
+	<section class="headline">{{main.headLine}}</section>
+
+	<div ng-if="main.hasVideoPlaceholder">
+		<img src="http://placehold.it/400x200&txt=video" class="news-img" />
+	</div>
+
+	<div class="" ng-repeat="t in getTimes(main.numberOfImages) track by $index">
+			<img src="http://placehold.it/400x200&txt=image" class="news-img" />
+	</div>
+
+  <article ng-bind-html="main.fullStory" class="snippet"></article>
+</div>
+
+<aside class="col-sm-4 related-content">
+	<section class="headline">{{aside.headLine}}</section>
+
+	<div ng-if="aside.hasVideoPlaceholder">
+		<img src="http://placehold.it/400x200&txt=image" class="news-img" />
+	</div>
+
+	<article>
+  	<span class="location">{{aside.location}} - </span>
+  	<span ng-bind-html="aside.fullStory" class="snippet"></span>
+	</article>
+</aside>
+</div>

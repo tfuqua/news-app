@@ -1,0 +1,81 @@
+<div ng-controller="homeController">
+
+    <!-- Banner -->
+    <div class="banner" ng-class="{'active': isActive}"
+       ng-init="isActive = false" ng-click="isActive = !isActive">
+          <div class="toggle"> <span class="fa fa-chevron-down"></span></div>
+          <span class="ad">{{banner}}</span>
+          <div class="details">{{details}}</div>
+    </div>
+
+    <div class="row">
+      <aside class="col-sm-3 aside">
+        <div ng-repeat="a in aside track by $index">
+            <div ng-if="$index > 0" class="divider"></div>
+            <section class="headline">{{a.headLine}}</section>
+            <article class="snippet">
+              <span class="location">{{a.location}} - </span>
+              {{a.snippet}}
+            </article>
+        </div>
+      </aside> <!-- .col-sm-2 -->
+
+      <div class="col-sm-4 main">
+        <div ng-repeat="article in main track by $index">
+
+          <div ng-if="article.hasVideoPlaceholder">
+            <img src="http://placehold.it/400x300&txt=video" class="video" />
+          </div>
+
+          <section class="item_{{$index}} headline">{{article.headLine}}</section>
+
+          <article class="snippet">
+          <span class="pull-right" style="width:40%; padding:5px 0 5px 10px;" ng-repeat="t in getTimes(article.numberOfImages) track by $index">
+            <img src="http://placehold.it/200x200&txt=image" class="news-img" />
+          </span>
+          <span class="location">{{article.location}} - </span>
+            {{article.snippet}}
+          </article>
+
+          <div ng-if="$index < (main.length-1)" class="divider">
+          </div>
+        </div>
+      </div> <!-- .col-sm-6 -->
+
+      <div class="col-sm-5">
+          <section class="text-center opinion-title">
+            The Opinion Pages
+          </section>
+          <div class="row">
+            <div ng-repeat="article in opinion" class="col-sm-6 opinion">
+              <section class="headline">{{article.headLine}}</section>
+              <article class="snippet">
+                <span class="location">{{article.location}} - </span>
+                <span ng-bind-html="article.fullStory"></span>
+              </article>
+            </div>
+          </div>
+
+        <div class="clearfix"></div>
+        <div class="divider"></div>
+        <section class="travel">
+          <span class="travel-title">Travel</span>
+
+        <div ng-repeat="article in travel" class="col-sm-6">
+          <section class="headline">{{article.headLine}}</section>
+
+          <div class="" ng-repeat="t in getTimes(article.numberOfImages) track by $index">
+              <img class="news-img num-{{article.numberOfImages}}" src="http://placehold.it/300x200&txt=image" />
+          </div>
+
+          <article ng-if="article.numberOfImages < 2" class="snippet">
+            <span class="location">{{article.location}} - </span>
+            <span ng-bind-html="article.snippet"></span>
+          </article>
+
+        </div>
+      </section>
+
+      </div> <!-- .col-sm-4 -->
+    </div> <!-- .row -->
+</div>

@@ -1,0 +1,183 @@
+@font-face {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arvo'), url(../fonts/Arvo-Regular.ttf) format('truetype');
+}
+body {
+  font-family: Arvo, arial, sans-serif;
+  color: #333333;
+}
+.main-container {
+  width: 980px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+.top-nav {
+  font-size: 9pt;
+  color: #cccccc;
+  padding: 12px;
+}
+.top-nav .fa {
+  color: #333;
+  padding: 0 3px 0 6px;
+}
+.divider {
+  margin-top: 15px;
+  border-top: 1px solid #999;
+  padding-bottom: 15px;
+}
+header {
+  border-top: 1px solid #666;
+  padding: 5px 0 10px;
+}
+header h1 {
+  font-weight: bold;
+}
+a,
+a:hover,
+a:focus {
+  color: #333333;
+  text-decoration: none;
+  outline: none;
+  outline-offset: none;
+}
+nav {
+  font-size: 14pt;
+  border-top: 1px solid #666;
+  padding: 5px 0 0;
+}
+nav .list-inline > li {
+  padding: 3px 15px;
+}
+nav li > a {
+  font-size: 14pt;
+}
+.date {
+  font-size: 14pt;
+}
+.video {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+.banner {
+  padding: 25px 15px;
+  text-align: center;
+  background: #ccc;
+  position: relative;
+  margin-bottom: 15px;
+}
+.banner .toggle {
+  color: #fff;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.banner .toggle:before {
+  content: "Click to Expand";
+}
+.banner.active .toggle:before {
+  content: "Click to Collapse";
+}
+.banner:hover {
+  cursor: pointer;
+}
+.banner .details {
+  font-size: 12pt;
+  padding: 0;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.banner.active .details {
+  opacity: 1;
+  height: auto;
+  padding: 10px 0;
+}
+.ad {
+  font-size: 18pt;
+  font-style: italic;
+}
+.headline {
+  font-weight: bold;
+  font-style: Italic;
+  font-size: 19pt;
+}
+.snippet {
+  font-size: 12pt;
+}
+.main .headline {
+  font-size: 16pt;
+}
+.main > div:first-of-type > .headline {
+  font-weight: 500;
+}
+.main .snippet,
+.opinion .snippet,
+.travel .snippet {
+  font-size: 10pt;
+}
+.opinion-title {
+  font-style: Italic;
+  font-size: 16pt;
+  padding: 0 0 5px;
+}
+.opinion .headline,
+.travel .headline {
+  font-size: 12pt;
+  font-weight: bold;
+}
+.opinion:first-of-type .headline {
+  font-weight: 500;
+}
+.travel div:first-of-type .headline {
+  font-style: normal;
+}
+.travel-title {
+  padding: 0 0 10px;
+  display: block;
+  font-size: 12pt;
+}
+.news-img {
+  max-width: 100%;
+  padding: 5px 0;
+}
+.news-img.num-1 {
+  height: 90px;
+  min-width: 100%;
+}
+.news-img.num-2 {
+  height: 150px;
+  min-width: 100%;
+}
+.location {
+  text-transform: uppercase;
+}
+.category {
+  padding: 10px 0;
+}
+.category .news-img {
+  min-width: 100%;
+}
+.category .headline {
+  font-size: 26pt;
+}
+.category .snippet {
+  font-size: 10pt;
+}
+.category .video {
+  height: 300px;
+}
+.related-content {
+  border-left: 1px solid #ccc;
+}
+.category .related-content .headline {
+  font-size: 16pt;
+}
+.category .related-content .snippet {
+  font-size: 12pt;
+}
