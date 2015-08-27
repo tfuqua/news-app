@@ -1,4 +1,4 @@
-mean-grunt
+HTML 5 News application
 ==========
 
-Using Grunt to automate a MEAN stack application.
+Created an HTML 5 news application for CapTech Tech Challenge
