@@ -72,11 +72,24 @@ module.exports = function(grunt) {
         logConcurrentOutput: true
       },
       tasks: ['nodemon', 'watch']
+    },
+
+    compress: {
+      main: {
+        options: {
+          archive: 'dist/code.zip'
+        },
+        files: [
+          {src: ['public/**']},
+          {src: ['package.json']},
+          {src: ['server.js']}
+        ]
+      }
     }
 
   });
 
   grunt.registerTask('default', ['less', 'sass', 'cssmin', 'jshint', 'uglify', 'concurrent']);
-  grunt.registerTask('jenkins', ['jshint']);
+  grunt.registerTask('jenkins', ['less', 'cssmin', 'jshint', 'uglify', 'compress']);
 
 };
