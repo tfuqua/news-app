@@ -80,6 +80,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['less', 'sass', 'cssmin', 'jshint', 'uglify', 'concurrent']);
   grunt.registerTask('jenkins', ['jshinst']);
-  )
 
 };
