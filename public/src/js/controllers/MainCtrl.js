@@ -82,6 +82,7 @@ app.config(function($routeProvider) {
 app.controller('articleController', function($scope, $http, $routeParams) {
 
     var id = $routeParams.id;
+    
     $scope.id = id;
 
     var url = "/categories/" + id;
