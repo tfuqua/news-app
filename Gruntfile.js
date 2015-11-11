@@ -1,15 +1,8 @@
 module.exports = function(grunt) {
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-nodemon');
-  grunt.loadNpmTasks('grunt-concurrent');
-  
+  require('time-grunt')(grunt);
+  require('load-grunt-tasks')(grunt);
+
   grunt.loadNpmTasks('grunt-contrib-sass');
 
   grunt.initConfig({
@@ -86,5 +79,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['less', 'sass', 'cssmin', 'jshint', 'uglify', 'concurrent']);
+  grunt.registerTask('jenkins', ['jshinst']);
+  )
 
 };
