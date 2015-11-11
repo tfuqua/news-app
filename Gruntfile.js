@@ -81,8 +81,11 @@ module.exports = function(grunt) {
         },
         files: [
           {src: ['public/**']},
+          {src: ['deploy_scripts/**']},
           {src: ['package.json']},
-          {src: ['server.js']}
+          {src: ['server.js']},
+          {src: ['Gruntfile.js']},
+          {src: ['appspec.yml']},
         ]
       }
     }
