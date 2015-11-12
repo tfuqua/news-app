@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 
+  require('time-grunt')(grunt);
+  require('load-grunt-tasks')(grunt);
+
   grunt.initConfig({
 
     // JS TASKS ================================================================
@@ -23,6 +26,17 @@ module.exports = function(grunt) {
       build: {
         files: {
           'public/dist/css/style.css': 'public/src/css/style.less'
+        }
+      }
+    },
+
+    sass: {
+      dist: {
+        options:{
+          style: 'compressed'
+        },
+        files: {
+          'public/dist/css/sass.css' : 'public/src/css/sass.scss'
         }
       }
     },
@@ -58,19 +72,27 @@ module.exports = function(grunt) {
         logConcurrentOutput: true
       },
       tasks: ['nodemon', 'watch']
+    },
+
+    compress: {
+      main: {
+        options: {
+          archive: 'dist/code.zip'
+        },
+        files: [
+          {src: ['public/**']},
+          {src: ['deploy_scripts/**']},
+          {src: ['package.json']},
+          {src: ['server.js']},
+          {src: ['Gruntfile.js']},
+          {src: ['appspec.yml']},
+        ]
+      }
     }
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-nodemon');
-  grunt.loadNpmTasks('grunt-concurrent');
-
-  grunt.registerTask('default', ['less', 'cssmin', 'jshint', 'uglify', 'concurrent']);
+  grunt.registerTask('default', ['less', 'sass', 'cssmin', 'jshint', 'uglify', 'concurrent']);
+  grunt.registerTask('jenkins', ['less', 'cssmin', 'jshint', 'uglify', 'compress']);
 
 };
