@@ -1,5 +1,5 @@
 {
-  "name": "captech-news",
+  "name": "captech-newss",
   "main": "server.js",
   "scripts": {
     "start": "grunt"
